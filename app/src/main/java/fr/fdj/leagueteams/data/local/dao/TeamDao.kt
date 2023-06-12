@@ -9,7 +9,7 @@ import fr.fdj.leagueteams.utils.Util
 
 @Dao
 interface TeamDao {
-    @Query("SELECT * FROM ${Util.TEAM_TABLE}")
+    @Query("SELECT * FROM ${Util.TEAM_TABLE} ORDER BY idTeam DESC")
     suspend fun getTeamList(): MutableList<TeamEntity>
 
     @Query("SELECT * FROM ${Util.TEAM_TABLE} WHERE idTeam = :idTeam")
